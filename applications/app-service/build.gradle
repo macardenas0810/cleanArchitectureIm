@@ -1,10 +1,21 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+	implementation project( ':jpa-repository')
     implementation project(':model')
     implementation project(':usecase')
     implementation 'org.springframework.boot:spring-boot-starter'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
+
+    /*nuevo */
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+    // https://mvnrepository.com/artifact/org.springframework/spring-orm
+    //  implementation group: 'org.springframework', name: 'spring-orm', version: '2.5.1'
+// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.6.1'
 }
 
 task explodedJar(type: Copy) {
